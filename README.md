@@ -67,4 +67,4 @@ Want to contribute to the Subtitle Sorcery? Fork the repository, cast your creat
 
 ## Licence
 
-Subtitle Sorcery is released under the [MIT License](LICENSE).
+Subtitle Sorcery is released under the [MIT License](https://opensource.org/license/mit/).
