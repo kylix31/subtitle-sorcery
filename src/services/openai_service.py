@@ -10,9 +10,9 @@ class OpenAIService:
         Parameters:
         - api_key (str): The API key for accessing the OpenAI service.
         """
-        self.client = OpenAI(api_key=api_key)
+        self.client = OpenAI()
 
-    def translate_text(self, text, target_lang="en"):
+    def translate_text(self, text, target_lang="pt-br"):
         """
         Translates the given text into the specified target language using the OpenAI GPT-3.5 Turbo model.
 
@@ -34,7 +34,12 @@ class OpenAIService:
                     "role":
                     "system",
                     "content":
-                    "As an advanced subtitle translation system, I am designed to facilitate seamless language conversion to Brazilian Portuguese. Upon receiving text in any language, my primary function is to deliver an accurate and culturally relevant translation exclusively in pt-br. I am programmed to ensure that the output consists solely of the translated content and any characters that could not be recognized or have no direct equivalent in the target language. This streamlined approach guarantees a focused and uncluttered translation service."
+                    f"""
+                    You're a AWESOME subtitle translator that can detect any
+                    language that the user will send and you have to translate to the {target_lang}.
+                    You will translate a One Piece anime, keep the fun on your translations.
+                    You just can return the TRANSLATED TEXTS. Not a explanation. Not comments. Just the TRANSLATED TEXTS.
+                    """
                 }, {
                     "role": "user",
                     "content": f"{text}"
